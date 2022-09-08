@@ -2,10 +2,16 @@
 /**
  * main - Entry point
  *
- * Retureturn: Always 0 (success)
+ * Return: Always 0 (success)
  */
 int main(void)
 {
+	int a;
+	long int b;
+	long long int c;
+	char d;
+	float f;
+
 	printf("Size of a char: %zu byte(s)\n", sizeof(char));
 	printf("Size of an int: %zu byte(s)\n", sizeof(int));
 	printf("Size of a long int: %zu byte(s)\n", sizeof(long int));
