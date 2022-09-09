@@ -1,22 +1,17 @@
 #include <stdio.h>
 /**
- * main - Entry point
+ * main - main function
  *
- * Return: 0 success
+ * Return: 0
  */
 int main(void)
 {
-	int c = 0
-		while (c < 10)
-		{
-			putchar (48+c);
-			if (c != 9)
-			{
-				putchar (',');
-				putchar (' ');
-			}
-			c ++;
-		}
+	int i = 0;
+	for (i = 10; i < 99; i ++)
+	{
+		putchar (i);
+		putchar (',');
+	}
 	putchar ('\n');
 	return (0);
 }
