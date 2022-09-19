@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * puts_half - a function that prints half of a string
+ * puts_half - prints the second half of a string
+ * @str: string to print
  *
- * 
- * Return: half of input
+ * Return: void
  */
 void puts_half(char *str)
 {
