@@ -1,1 +1,1 @@
-0x05-pointers_arrays_strings
+Learning Pointers, arrays and strings in C
