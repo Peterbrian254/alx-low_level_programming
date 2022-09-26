@@ -9,19 +9,23 @@
   */
 char *_strchr(char *s, char c)
 {
-	int a = 0, b;
-	while (s[a])
+	while (*s ! = '\0') /* Declaring WHILE */
 	{
-		a++;
-	}
-	for (b = 0; b <= a; b++)
-	{
-
-		if (c == s[b])
+		if (*s == c) /*if s == c*/
 		{
-			s += b;
-			return (s);
+			return (s); /*return s*/
 		}
+
+		++s;
+
 	}
-	return ('\0');
+
+	if (*s == c)
+	{
+		return (s);
+
+	}
+
+
+	return (0); /*value null*/
 }
