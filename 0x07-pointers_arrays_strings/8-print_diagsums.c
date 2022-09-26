@@ -10,17 +10,17 @@
  */
 void print_diagsums(int *a, int size)
 {
-	int i, j, dg_r = 0, dg_l = 0, locate;
+	int i, j, p, l = 0, r = 0;
+
 	for (i = 0; i < size; i++)
 	{
-		for (j = 0; j < size; j++)
-		{
-			locate = (i * size) + j;
-			if (i == j)
-				dg_r = dg_r + a[locate];
-			if ((i + j) == (size - 1))
-				dg_l = dg_l + a[locate];
-		}
+		p = (i * size) + i;
+		l += *(a + p);
 	}
-	printf("%d, %d\n", dg_r, dg_l);
+	for (j = 0; j < size; j++)
+	{
+		p = (j * size) + (size - l - j);
+		r += *(a + p);
+	}
+	printf("%i, %i\n", l, r);
 }
