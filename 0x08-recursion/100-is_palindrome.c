@@ -1,47 +1,54 @@
 #include "main.h"
+
+int check_palindrome(char *s);
+
 /**
- * _strlen_recursion - function that print lenght a string
- * @s: string to print recursively
- * Return: void
- */
+  * is_palindrome - Returns if a string is palindrome
+  * @s: the string value to be checked
+  *
+  * Return: integer value
+  */
+int is_palindrome(char *s)
+{
+	if (*s == '0')
+		return (1);
+	return (check_palindrome(s));
+
+}
+/**
+  * check_palindrome - Check if a string is palindrome
+  * @s: the string value to be checked
+  *
+  * Return: integer value
+  */
+int check_palindrome(char *s)
+{
+	int l = _strlen_recursion(s) - 1;
+
+	if (*s == s[l])
+	{
+		s++;
+		l--;
+	}
+	else
+	{
+		return (0);
+	}
+	return (1);
+}
+/**
+  * _strlen_recursion - Get the length of a string
+  * @s: the string to get the length
+  *
+  * Return: the string length
+  */
 int _strlen_recursion(char *s)
 {
-	int lenght = 0;
-
 	if (*s == '\0')
 	{
 		return (0);
 	}
-	lenght = 1 + _strlen_recursion((s + 1));
-	return (lenght);
-}
-/**
- * _palindrome - function that returns 1 if a string
- * is a palindrome and 0 if not.
- * @start: begin to string
- * @size: finish to string
- * @s: string to validate
- * Return: 1 if string is palindrome , 0 otherwise
- */
-int _palindrome(int start, int size, char *s)
-{
-	if (s[start] == s[size]  && start < size)
-		return ( _palindrome(start + 1, size - 1, s));
-	if (start <= size)
-		return (1);
-	else
-		return (0);
-}
-/**
- * is_palindrome - function that returns 1 if a string
- * is a palindrome and 0 if not.
- * @s: string to validate
- * Return: 1 if string is palindrome , 0 otherwise
- */
-int is_palindrome(char *s)
-{
-	int lenght = 0;
+	s++;
+	return (_strlen_recursion(s) + 1);
 
-	lenght = _strlen_recursion(s);
-	return (_palindrome(0, lenght - 1, s));
 }
