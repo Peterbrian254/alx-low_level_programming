@@ -25,7 +25,6 @@ int number(char *str)
 	}
 	return (num);
 }
-
 /**
  * free_everything - frees the memory
  * @string: pointer values being passed for freeing
@@ -76,14 +75,12 @@ char **strtow(char *str)
 			}
 			while (*found_word != ' ' && *found_word != '\0')
 			{
-
 				words[b][c] = *found_word;
 				found_word++;
 				c++;
 			}
 			words[b][c] = '\0';
 			b++; c = 0; length = 0; str++;
-
 		}
 	}
 	return (words);
